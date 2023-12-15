@@ -2,7 +2,7 @@ name: Update README
 
 on:
   schedule:
-    - cron: '10 10 * * *'  # Set the desired time in UTC. This example runs daily at midnight.
+    - cron: '20 10 * * *'  # Set the desired time in UTC. This example runs daily at midnight.
 
 jobs:
   update-readme:
@@ -15,8 +15,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8'  # Use the version you need
+        python-version: '3.x'  # Use the version you need
 
     - name: Run the update script
-      run: python update_readme.py
-      working-directory: ${{ github.workspace }}
+      run: python dailyRunner.py
