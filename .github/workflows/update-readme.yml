@@ -1,0 +1,22 @@
+name: Update README
+
+on:
+  schedule:
+    - cron: '10 10 * * *'  # Set the desired time in UTC. This example runs daily at midnight.
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'  # Use the version you need
+
+    - name: Run the update script
+      run: python update_readme.py
+      working-directory: ${{ github.workspace }}
