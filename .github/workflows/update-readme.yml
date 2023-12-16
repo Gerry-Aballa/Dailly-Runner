@@ -2,7 +2,7 @@ name: Update README
 
 on:
   schedule:
-    - cron: '25 03 * * *'  # Set the desired time in UTC. This example runs daily at midnight.
+    - cron: '35 03 * * *'  # Set the desired time in UTC. This example runs daily at midnight.
 
 jobs:
   update-readme:
