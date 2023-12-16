@@ -2,7 +2,7 @@ name: Update README
 
 on:
   schedule:
-    - cron: '50 02 * * *'  # Set the desired time in UTC. This example runs daily at midnight.
+    - cron: '10 03 * * *'  # Set the desired time in UTC. This example runs daily at midnight.
 
 jobs:
   update-readme:
@@ -26,4 +26,4 @@ jobs:
         git config --local user.name "Gerry Aballa"
         git add .
         git commit -m "Update README"
-        git push
+        git push https://Gerry-Aballa:${{ secrets.UP_TOKEN }}@github.com/${{ github.repository }}.git
