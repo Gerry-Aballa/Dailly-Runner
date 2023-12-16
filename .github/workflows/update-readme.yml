@@ -2,7 +2,7 @@ name: Update README
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Set the desired time in UTC. This example runs daily at midnight.
+    - cron: '50 02 * * *'  # Set the desired time in UTC. This example runs daily at midnight.
 
 jobs:
   update-readme:
@@ -19,3 +19,11 @@ jobs:
 
     - name: Run the update script
       run: python dailyRunner.py
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "gerry.o.aballa@gmail.com"
+        git config --local user.name "Gerry Aballa"
+        git add .
+        git commit -m "Update README"
+        git push
